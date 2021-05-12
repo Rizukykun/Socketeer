@@ -25,9 +25,8 @@ public class Impressora extends Thread{
     public void run(){
         while(ativo){
             try {
-                Fila fila = Fila.obtemInstancia();
-                if (!fila.filaVazia()){
-                    String texto = fila.desenfileirar();
+                String texto = Fila.obtemInstancia().desenfileirar();
+                if (texto != null){                    
                     System.out.println("Impressora " + identificacao + " está imprimindo.");
                 }                
                 //Enviar pra impressão

@@ -18,6 +18,7 @@ public class Fila
     
     private Fila()
     {
+        fila = new ConcurrentLinkedQueue<String>();
     }
         
     public static Fila obtemInstancia(){
@@ -29,7 +30,7 @@ public class Fila
 
     
     
-    private static ConcurrentLinkedQueue<String> fila = new ConcurrentLinkedQueue<String>();
+    ConcurrentLinkedQueue<String> fila;
     /**
      * @return the queue
      */
