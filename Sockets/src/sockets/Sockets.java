@@ -40,15 +40,15 @@ public class Sockets {
             
             do{
                 System.out.println("\n\nEsolha uma opção:\n"
-                                 + "1 - Listar Clientes"
+                                 + "1 - Listar Clientes\n"
                                  + "2 - Fechar");
                 resposta = leitor.nextLine();
                 
                 if(resposta.equals("1")){
                     servidor.listarClientes();
                 }
-                else if (!resposta.equals(2)){
-                    System.out.print("Digite 1 ou 2");
+                else if (!resposta.equals("2")){
+                    System.out.println("Digite 1 ou 2");
                 }
                 
             }while (!resposta.equals("2"));
@@ -57,7 +57,6 @@ public class Sockets {
             System.out.println("Fechando receptor de conexões");
             servidor.fechar();
             servidor.join(5000);
-            servidor.interrupt();
             
             for(Impressora i : listaImpressoras){
                 System.out.println("Fechando conexão com a impressora " + i.getIdentificacao());

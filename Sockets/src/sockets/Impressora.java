@@ -28,8 +28,8 @@ public class Impressora extends Thread{
                 Fila fila = Fila.obtemInstancia();
                 if (!fila.filaVazia()){
                     String texto = fila.desenfileirar();
-                }
-                System.out.println("Impressora " + identificacao + " está imprimindo.");
+                    System.out.println("Impressora " + identificacao + " está imprimindo.");
+                }                
                 //Enviar pra impressão
                 Thread.sleep(10);
             } catch (InterruptedException ex) {

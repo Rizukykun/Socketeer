@@ -49,17 +49,18 @@ public class Servidor extends Thread
                  */
             } catch (IOException ex)
             {
-                Logger.getLogger(Servidor.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println("Servidor Fechado");
             }
         }
     }
     
-    public void fechar() throws IOException{
+    public void fechar() throws Exception{
         ativo = false;
         for(Cliente c : clientesConectados){
             System.out.println("Fechando conexão com o cliente " + c.hashCode());
             c.fecha();
         }
+        server.close();
     }
     
     public int getPort(){
