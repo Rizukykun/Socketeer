@@ -31,7 +31,7 @@ public class Fila
     
     private static ConcurrentLinkedQueue<String> fila = new ConcurrentLinkedQueue<String>();
     /**
-     * @return the fila
+     * @return the queue
      */
     public String desenfileirar()
     {
